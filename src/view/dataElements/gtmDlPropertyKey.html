@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Data Element</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <br />
+    <div class="container">
+      <div class="form-group">
+        <label>
+          Google Data Layer Property
+          <input id="gtmDElName" class="form-control" maxlength="100" />
+          <small class="text-muted">
+            <h4>
+              If called with context (during an event, condition or action):
+            </h4>
+            <ul>
+              <li>
+                empty field returns a copy of the datalayer model at the time of
+                the event
+              </li>
+              <li>
+                entering a property returns the property of the datalayer model,
+                eg. 'event_name' will return 'event.model.event_name'
+              </li>
+            </ul>
+            <h4>If called without context</h4>
+            <p>
+              A datalayer property at the time of script exection is returned
+            </p>
+            <p>
+              In the case of no context and an empty property, an empty String
+              is returned.
+            </p>
+          </small>
+        </label>
+      </div>
+    </div>
+
+    <script src="https://assets.adobedtm.com/activation/reactor/extensionbridge/extensionbridge.min.js"></script>
+    <script>
+      window.extensionBridge.register({
+        init: function (info) {
+          if (info.settings) {
+            document.querySelector('#gtmDElName').value = info.settings.value;
+          }
+        },
+        getSettings: function () {
+          return {
+            value: document.querySelector('#gtmDElName').value
+          };
+        },
+        validate: function () {
+          return true;
+        }
+      });
+    </script>
+  </body>
+</html>

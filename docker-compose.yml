@@ -1,0 +1,10 @@
+services:
+  app:
+    image: node
+    ports:
+      - 3000:3000
+      - 4000:4000
+      - 35729:35729
+    volumes:
+      - ./:/app
+    command: sh -c "cd app && npm i && npm run dev"

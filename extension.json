@@ -1,0 +1,80 @@
+{
+  "displayName": "Google Data Layer",
+  "name": "google-data-layer",
+  "version": "0.1.12",
+  "description": "Supports the use of a Google data layer in AEP Data Collection / Launch. The extension uses Google's Data Layer Helper https://github.com/google/data-layer-helper (Copyright 2012 Google Inc).  The extension can be used with or without Google Tag Manager providing / accessing the Data Layer array.",
+  "author": {
+    "name": "Valtech Switzerland AG"
+  },
+  "viewBasePath": "dist/view/",
+  "iconPath": "resources/icons/logo.svg",
+  "dataElements": [
+    {
+      "displayName": "Google DL property key",
+      "name": "gtm-dl-property-key",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {}
+      },
+      "libPath": "dist/lib/dataElements/gtmDlPropertyKey.js",
+      "viewPath": "dataElements/gtmDlPropertyKey.html"
+    }
+  ],
+  "events": [
+    {
+      "displayName": "Google DL Push Event",
+      "name": "gtm-dl-push-event",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string"
+          },
+          "regex": {
+            "type": "boolean"
+          },
+          "eventKey": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "method"
+        ]
+      },
+      "libPath": "dist/lib/events/gtmDlPushEvent.js",
+      "viewPath": "events/gtmDlPushEvent.html"
+    }
+  ],
+  "configuration": {
+    "viewPath": "configuration/configuration.html",
+    "schema": {
+      "$schema": "http://json-schema.org/draft-04/schema#",
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "actions": [
+    {
+      "name": "gtm-dl-push-action",
+      "displayName": "Google DL Push Action",
+      "libPath": "dist/lib/actions/gtmDlPush.js",
+      "viewPath": "actions/gtmDlPush.html",
+      "schema": {
+        "$schema": "http://json-schema.org/draft-04/schema#",
+        "type": "object",
+        "properties": {
+          "content": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "content"
+        ]
+      }
+    }
+  ],
+  "main": "dist/lib/helpers/instantiateGtmDlHelper.js",
+  "platform": "web"
+}

@@ -1,0 +1,9 @@
+AEP Tags Google Data Layer Extension
+
+This extension includes code developed by Google.
+
+Some parts of the extension, which are copied from, derived from, or
+inspired by the Google Data Layer Helper Library https://github.com/google/data-layer-helper
+
+The Initial Developer of the Helper code in the file DataLayerHelper.ts is Google Inc copyright 2012.
+
