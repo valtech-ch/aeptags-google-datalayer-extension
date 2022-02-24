@@ -1,6 +1,6 @@
 {
   "displayName": "Google Data Layer",
-  "name": "google-data-layer",
+  "name": "googledatalayer",
   "version": "0.1.12",
   "description": "Supports the use of a Google data layer in AEP Data Collection / Launch. The extension uses Google's Data Layer Helper https://github.com/google/data-layer-helper (Copyright 2012 Google Inc).  The extension can be used with or without Google Tag Manager providing / accessing the Data Layer array.",
   "author": {
